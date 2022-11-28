@@ -10,7 +10,7 @@ When('I close the promotional banner in case of its appearance', async () => {
     const banner = await $('.modal-content');
     // Use this to reduce the amount of attempts $(findElement) makes
     // to find the promo modal window
-    await banner.waitForExist({ timeout: 2000 });
+    await banner.waitForExist({ timeout: 3000 });
     const closeButton = await banner.$('.close');
     await expect(closeButton).toBeClickable();
     await closeButton.click();
