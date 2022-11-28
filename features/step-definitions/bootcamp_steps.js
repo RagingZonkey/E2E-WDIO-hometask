@@ -41,7 +41,6 @@ When('I click on the {string}', async (elementOption) => {
 
 Then('I should see at least one respective item', async () => {
   const singleItem = await $('#item_cell_32-350-881_1_0');
-  console.log(singleItem);
   await expect(singleItem).toBeExisting();
 });
 
