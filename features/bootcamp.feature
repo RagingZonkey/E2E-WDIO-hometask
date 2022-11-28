@@ -1,12 +1,17 @@
-Feature: 
+Feature: Bootcamp E2E
 
-  Scenario Outline: As a user, I can log into the secure area
+  Background:
+    Given I am on the home page
+    When I close the promotional banner in case of its appearance
 
-    Given I am on the login page
-    When I login with <username> and <password>
-    Then I should see a flash message saying <message>
+  Scenario: Search bar
 
-    Examples:
-      | username | password             | message                        |
-      | tomsmith | SuperSecretPassword! | You logged into a secure area! |
-      | foobar   | barfoo               | Your username is invalid!      |
+    When I enter 'Windows' in the search bar
+    And I click on the 'search button'
+    Then I should see at least one respective item
+
+  Scenario: Internet shop logo button
+
+    When I open "Today's Best Deals" tab
+    And I click on the 'Internet shop logo'
+    Then I should see the home page
