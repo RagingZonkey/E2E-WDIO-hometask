@@ -13,6 +13,6 @@ module.exports = {
   rules: {
     'no-undef': 0,
     'import/no-extraneous-dependencies': 0,
-    'prettier/prettier': 'error',
+    'no-console': 0,
   },
 };
