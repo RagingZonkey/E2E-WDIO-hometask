@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   env: {
     commonjs: true,
     es2021: true,
@@ -14,5 +14,6 @@ module.exports = {
     'no-undef': 0,
     'import/no-extraneous-dependencies': 0,
     'no-console': 0,
+    'import/prefer-default-export': 0,
   },
 };
