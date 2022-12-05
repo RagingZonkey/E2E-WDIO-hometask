@@ -1,6 +1,6 @@
 import { When, Then } from '@wdio/cucumber-framework';
 import * as selectors from '../utils/selectors';
-import { TEST_EMAIL, TEST_PASSWORD } from '../utils/globalVariables';
+import * as variables from '../utils/globalVariables';
 
 // Used for comparing initial product price with the value on the checkout page
 let pickedItemPrice;
@@ -71,13 +71,13 @@ When('the customer clicks on PROCEED TO CHECKOUT button', async () => {
 When('the customer logs in with existing credentials', async () => {
   const emailInput = await $('#labeled-input-signEmail');
   await expect(emailInput).toExist();
-  await emailInput.setValue(TEST_EMAIL);
+  await emailInput.setValue(variables.TEST_EMAIL);
   const submitButton = await $('#signInSubmit');
   await expect(submitButton).toBeClickable();
   await submitButton.click();
   const passwordInput = await $('#labeled-input-password');
   await expect(passwordInput).toExist();
-  await passwordInput.setValue(TEST_PASSWORD);
+  await passwordInput.setValue(variables.TEST_PASSWORD);
   await expect(submitButton).toBeClickable();
   await submitButton.click();
 });
@@ -124,3 +124,30 @@ Then(
     await expect(secondItem).toExist();
   }
 );
+
+When('the customer closes ADD ADDRESS modal window', async () => {
+  const button = await $('button.close');
+  await expect(button).toBeClickable();
+  await button.click();
+});
+
+When('the customer creates a new account', async () => {
+  const link = await $('=Sign Up');
+  await expect(link).toBeClickable();
+  await link.click();
+  const firstNameInput = await $$('.form-input input')[0];
+  await expect(firstNameInput).toExist();
+  await firstNameInput.setValue(variables.RANDOM_FIRST_NAME);
+  const lastNameInput = await $$('.form-input input')[1];
+  await expect(lastNameInput).toExist();
+  await lastNameInput.setValue(variables.RANDOM_LAST_NAME);
+  const emailInput = await $$('.form-input input')[2];
+  await expect(emailInput).toExist();
+  await emailInput.setValue(variables.RANDOM_TEST_EMAIL);
+  const passwordInput = await $$('.form-input input')[4];
+  await expect(passwordInput).toExist();
+  await passwordInput.setValue(variables.RANDOM_TEST_PASSWORD);
+  const submitButton = await $('.btn.btn-orange');
+  await expect(submitButton).toBeClickable();
+  await submitButton.click();
+});
