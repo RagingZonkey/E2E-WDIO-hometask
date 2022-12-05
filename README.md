@@ -27,3 +27,5 @@ Run the test suite:
 ```bash
 yarn wdio
 ```
+
+## Reasoning for addiotional scenario choice

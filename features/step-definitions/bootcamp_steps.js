@@ -25,12 +25,6 @@ Then('the customer should see at least one respective item', async () => {
   await expect(singleItem).toBeExisting();
 });
 
-When('the customer opens {string} tab', async (tabName) => {
-  const link = await $(`*=${tabName}`);
-  await expect(link).toBeClickable();
-  await link.click();
-});
-
 Then('the customer should see the home page', async () => {
   await expect(browser).toHaveUrl(HOME_PAGE_ADDRESS);
 });

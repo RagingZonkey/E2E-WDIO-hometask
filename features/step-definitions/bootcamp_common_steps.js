@@ -21,3 +21,9 @@ When(
     }
   }
 );
+
+When('the customer opens {string} tab', async (tabName) => {
+  const link = await $(`*=${tabName}`);
+  await expect(link).toBeClickable();
+  await link.click();
+});
