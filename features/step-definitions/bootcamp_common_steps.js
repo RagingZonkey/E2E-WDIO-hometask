@@ -2,7 +2,7 @@ import { Given, When } from '@wdio/cucumber-framework';
 import { HOME_PAGE_ADDRESS } from '../utils/globalVariables';
 import * as selectors from '../utils/selectors';
 
-Given('the home page is open', async () => {
+Given('a customer opens the home page', async () => {
   await browser.url(HOME_PAGE_ADDRESS);
 });
 
