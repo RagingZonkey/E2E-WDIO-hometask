@@ -30,7 +30,7 @@ yarn wdio
 
 ## Reasoning for addiotional scenario choice
 
-#### Due to the fact that, according to the software testing pyramid, the amount of E2E tests should be very limited and strongly specified matching the most vital business needs, so that after completing the testing lifecycle stakeholders can be confident about the scenarios which are going to be the most profitable ones to be stable and the processes to be sound. So, from my point of view, in the case with Newegg the most crucial parts of user experience are interacting with the shopping cart and choosing the right products through well aligned categories which were basically covered within my test suite.
+#### Due to the fact that, according to the software testing pyramid, the amount of E2E tests should be very limited and strongly specified matching the most vital business needs, so that after completing the testing lifecycle stakeholders could be confident about the scenarios which are going to be the most profitable ones to be stable and the processes to be sound. So, from my point of view, in the case with Newegg the most crucial parts of user experience are interacting with the shopping cart and choosing the right products through well aligned categories which were basically covered within my test suite.
 
 ## Test-suite last run results
 
